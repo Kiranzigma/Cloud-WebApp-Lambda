@@ -2,6 +2,7 @@ package csye6225.Lmsapp_lambda;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
@@ -96,7 +97,7 @@ public class EmailHandler implements RequestHandler<SNSEvent, Object>
 }
 	
 	private void init() {
-        AmazonDynamoDB aDBclient = AmazonDynamoDBClientBuilder.defaultClient();
+        AmazonDynamoDB aDBclient = AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
         dynamoDB = new DynamoDB(aDBclient);
 
 
