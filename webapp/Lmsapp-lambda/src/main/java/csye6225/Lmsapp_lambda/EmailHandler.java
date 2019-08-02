@@ -27,7 +27,7 @@ public class EmailHandler implements RequestHandler<SNSEvent, Object>
 
 	static final String TEXTBODY = "This email was sent through Amazon SES " + "using the AWS SDK for Java.";
 	
-	static DynamoDB dynamoDB;
+	DynamoDB dynamoDB;
 
     //private String domainName= System.getenv("domainName");
 	
