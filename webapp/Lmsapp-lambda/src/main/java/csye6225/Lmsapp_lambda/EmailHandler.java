@@ -59,7 +59,7 @@ public class EmailHandler implements RequestHandler<SNSEvent, Object>
                 String TO = request.getRecords().get(0).getSNS().getMessage();
                 String token = request.getRecords().get(0).getSNS().getMessageId();
                 AmazonSimpleEmailService client =
-                        AmazonSimpleEmailServiceClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
+                        AmazonSimpleEmailServiceClientBuilder.defaultClient();
                 SendEmailRequest req = new SendEmailRequest().withDestination(new Destination().withToAddresses(TO))
                 		.withMessage(new Message().withBody(new Body().withHtml(new Content().withCharset("UTF-8").withData("Please click on the below link to reset the password<br/>"+ "<p><a href='#'>https://csye6225-su19-"+System.getenv("AWS_DOMAIN_NAME")+".me/reset?email="+TO+"&token="+token+"</a></p>")))
                                         .withSubject(
@@ -97,7 +97,7 @@ public class EmailHandler implements RequestHandler<SNSEvent, Object>
 }
 	
 	private void init() {
-        AmazonDynamoDB aDBclient = AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
+        AmazonDynamoDB aDBclient = AmazonDynamoDBClientBuilder.defaultClient();
         dynamoDB = new DynamoDB(aDBclient);
 
 
