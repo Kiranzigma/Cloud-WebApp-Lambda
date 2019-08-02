@@ -17,19 +17,19 @@ jobs:
       - run:
           name: Build JAR
           command: |
-            cd webapp/LmsApp-lambda
+            cd webapp/Lmsapp-lambda
             mvn clean package
       - run:
           name: Zip JAR File
           command: |
-            cd webapp/LmsApp-lambda/target/
-            cp LmsApp-lambda.jar LmsApp-lambda.zip
+            cd webapp/Lmsapp-lambda/target/
+            cp LmsApp-lambda.jar Lmsapp-lambda.zip
       - run:
           name: Check if renamed
           command: |
-            cd webapp/LmsApp-lambda/target
+            cd webapp/Lmsapp-lambda/target
             ls  
       - run:
           name: Update Lambda function
           command: |
-            aws lambda update-function-code --function-name=password_reset --zip-file=fileb://webapp/LmsApp-lambda/target/LmsApp-lambda.zip
+            aws lambda update-function-code --function-name=password_reset --zip-file=fileb://webapp/Lmsapp-lambda/target/LmsApp-lambda.zip
