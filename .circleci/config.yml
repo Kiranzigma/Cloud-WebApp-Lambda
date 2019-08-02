@@ -32,4 +32,4 @@ jobs:
       - run:
           name: Update Lambda function
           command: |
-            aws lambda update-function-code --function-name=password_reset --zip-file=fileb://webapp/Lmsapp-lambda/target/Lmsapp-lambda.zip
+            aws lambda update-function-code --function-name=password_reset --region=$AWS_REGION --zip-file=fileb://webapp/Lmsapp-lambda/target/Lmsapp-lambda.zip
