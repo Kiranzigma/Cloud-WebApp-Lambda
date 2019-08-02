@@ -39,7 +39,7 @@ public class EmailHandler implements RequestHandler<SNSEvent, Object>
 	    context.getLogger().log("trying to connect to dynamodb");
 	    context.getLogger().log("trying to connect to init");
 	    init();
-	    long unixTime = Instant.now().getEpochSecond()+15*60;
+	    long unixTime = Instant.now().getEpochSecond()+2*60;
 	    Table table = dynamoDB.getTable("csye6225");
 	    context.getLogger().log("this is the table botton");
 	    
