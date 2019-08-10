@@ -10,3 +10,8 @@
 
 
 CSYE6225-SU19-Lambda function for Password Reset using Amazon SES.
+
+#CI/CD - CircleCI
+1. Add github repository as CircleCI project
+2. Trigger the build using CircleCI API
+3. The lambda function would be updated and executed
