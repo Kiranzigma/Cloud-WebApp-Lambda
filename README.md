@@ -9,4 +9,10 @@
 | Akhil Prasad | 001449445 | prasad.ak@husky.neu.edu |
 
 
-CSYE6225-SU19-Lambda function for Password Reset using Amazon SES.
+CSYE6225-SU19-Lambda function for Password Reset using Amazon Simple Email Service(SES).
+
+
+#CI/CD - CircleCI
+1. Add github repository as CircleCI project
+2. Trigger the build using CircleCI API
+3. The lambda function would be updated and executed
